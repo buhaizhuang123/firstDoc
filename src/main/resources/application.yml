@@ -1,0 +1,25 @@
+server:
+  port: 8089
+
+spring:
+  # mysql
+  datasource:
+    username: bhz
+    password: Bhz123456
+    url: jdbc:mysql://localhost:3306/firstDoc?serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  # redis
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/test
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  # ????
+  mapper-locations: classpath:mapper/*.xml
+

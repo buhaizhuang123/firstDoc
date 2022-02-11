@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bu.firstdoc.sys.dao.UserInfoDao">
+    <insert id="saveUser">
+        insert into USER_INFO (id, USER_ID, USER_NAME, USER_ADDRESS, USER_BIR_DATE, USER_AGE, USER_INFO_DATA)
+        values (#{id}, #{userId}, #{userName}, #{userAddress}, #{userBirDate}, #{userAge}, #{userInfoData})
+    </insert>
+    <update id="updateUser">
+        update USER_INFO
+        set USER_ADDRESS   = #{userAddress},
+            USER_AGE       = #{userAge},
+            USER_BIR_DATE  = #{userBirDate},
+            USER_INFO_DATA = #{userInfoData}
+        where ID = #{id}
+    </update>
+    <delete id="delUser">
+        delete
+        from USER_INFO
+        where id = #{userId}
+    </delete>
+
+    <select id="findAll" resultType="com.bu.firstdoc.sys.model.UserInfo">
+        select *
+        from USER_INFO
+        <where>
+            <if test="userInfo.id != null and userInfo.id != ''">
+                ID = #{userInfo.id}
+            </if>
+            <if test="userInfo.userId != null and userInfo.userId != ''">
+                and USER_ID = #{userInfo.userId}
+            </if>
+            <if test="userInfo.userName != null and userInfo.userName != ''">
+                and USER_NAME like concat(concat('%',#{userInfo.userName}),'%')
+            </if>
+            <if test="userInfo.userAge != null and userInfo.userAge != ''">
+                and USER_AGE = #{userInfo.userAge}
+            </if>
+            <if test="userInfo.userAddress != null and userInfo.userAddress != ''">
+                and USER_ADDRESS like '%' || #{userInfo.userAddress} || '%'
+            </if>
+        </where>
+
+    </select>
+
+
+</mapper>
