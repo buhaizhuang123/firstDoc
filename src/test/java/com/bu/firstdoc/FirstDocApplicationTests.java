@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 @SpringBootTest
 class FirstDocApplicationTests {
 
-    @Autowired
+//    @Autowired
     private UserInfoDao userInfoDao;
 
     @Autowired

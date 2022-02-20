@@ -17,14 +17,18 @@ import java.util.List;
  */
 @Service
 public class UserInfoServiceImpl implements UserInfoService {
-
-    @Autowired
-    private UserInfoDao userInfoDao;
-
     @Override
-    @RedisSys
     public List<UserInfo> findAll(UserInfo userInfo) {
-        List<UserInfo> all = userInfoDao.findAll(userInfo, new RowBounds(0, 10));
-        return all;
+        return null;
     }
+//
+//    @Autowired
+//    private UserInfoDao userInfoDao;
+
+//    @Override
+//    @RedisSys
+//    public List<UserInfo> findAllDic(UserInfo userInfo) {
+//        List<UserInfo> all = userInfoDao.findAllDic(userInfo, new RowBounds(0, 10));
+//        return all;
+//    }
 }

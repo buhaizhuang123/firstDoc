@@ -6,5 +6,4 @@ package com.bu.firstdoc.dp.DesignPatterns;
  * @mark DesignPatterns
  */
 public class DesignPatterns {
-
 }

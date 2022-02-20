@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -16,10 +17,13 @@ import java.util.Date;
 @Accessors(chain = true)
 public class UserInfo implements Serializable {
 
+    @NotNull(message = "id 不能为空")
     private String id;
 
+    @NotNull(message = "userId 不嫩为空")
     private String userId;
 
+    @NotNull(message = "userName 不能为空")
     private String userName;
 
     private String userAddress;

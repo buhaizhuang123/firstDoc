@@ -15,7 +15,7 @@ import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 
 @SpringBootApplication
-@MapperScan({"com/bu/firstdoc/sys/dao"})
+@MapperScan({"com/bu/firstdoc/klin/mapper","com/bu/firstdoc/firstDoc/mapper"})
 @EnableWebSocket
 public class FirstDocApplication {
 
@@ -35,7 +35,10 @@ public class FirstDocApplication {
 
     @Bean
     public Validator validator() {
-        ValidatorFactory validatorFactory = Validation.byProvider(HibernateValidator.class).configure().failFast(true).buildValidatorFactory();
+        ValidatorFactory validatorFactory = Validation.byProvider(HibernateValidator.class)
+                .configure()
+                .failFast(false)
+                .buildValidatorFactory();
         return validatorFactory.getValidator();
     }
 

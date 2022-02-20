@@ -7,7 +7,7 @@ import org.apache.ibatis.session.RowBounds;
 
 import java.util.List;
 
-@Mapper
+// @Mapper
 public interface UserInfoDao {
 
     /**
