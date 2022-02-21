@@ -40,6 +40,9 @@ public class KlinTest {
     public void testMapper(){
 
         UserInfo userInfo = new UserInfo();
+        userInfo.setUserId("123");
+        userInfo.setId("123");
+        userInfo.setUserName("123");
         Set<ConstraintViolation<UserInfo>> validate = this.validator.validate(userInfo);
         validate.stream().forEach(val-> System.out.println(val.getMessage()));
 
