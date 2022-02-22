@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.cglib.transform.AbstractClassLoader;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.validation.ConstraintViolation;
@@ -37,15 +38,14 @@ public class KlinTest {
     private Validator validator;
 
     @Test
-    public void testMapper(){
+    public void testMapper() {
 
         UserInfo userInfo = new UserInfo();
         userInfo.setUserId("123");
         userInfo.setId("123");
         userInfo.setUserName("123");
         Set<ConstraintViolation<UserInfo>> validate = this.validator.validate(userInfo);
-        validate.stream().forEach(val-> System.out.println(val.getMessage()));
-
+        validate.stream().forEach(val -> System.out.println(val.getMessage()));
 
 
         List all1 = userInfoMapper.findAll();
@@ -53,5 +53,4 @@ public class KlinTest {
         System.out.println(all);
         System.out.println(all1);
     }
-
 }

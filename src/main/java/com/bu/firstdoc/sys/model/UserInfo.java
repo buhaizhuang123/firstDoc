@@ -35,4 +35,8 @@ public class UserInfo implements Serializable {
 
     private String userInfoData;
 
+    public static void getUserBirDate(UserInfo user) {
+        user.setUserName("123");
+        System.out.println(user);
+    }
 }
