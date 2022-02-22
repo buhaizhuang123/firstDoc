@@ -1,3 +1,82 @@
-123455
-11221
-11222
+{
+  public com.bu.firstdoc.FirstDocApplication();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 20: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lcom/bu/firstdoc/FirstDocApplication;
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: ldc           #2                  // class com/bu/firstdoc/FirstDocApplication
+         2: aload_0
+         3: invokestatic  #3                  // Method org/springframework/boot/SpringApplication.run:(Ljava/lang/Class;[Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;
+         6: pop
+         7: return
+      LineNumberTable:
+        line 23: 0
+        line 24: 7
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       8     0  args   [Ljava/lang/String;
+    MethodParameters:
+      Name                           Flags
+      args
+
+  public org.mybatis.spring.boot.autoconfigure.ConfigurationCustomizer configurationCustomizer();
+    descriptor: ()Lorg/mybatis/spring/boot/autoconfigure/ConfigurationCustomizer;
+    flags: ACC_PUBLIC
+    Code:
+      stack=3, locals=1, args_size=1
+         0: new           #4                  // class com/bu/firstdoc/FirstDocApplication$1
+         3: dup
+         4: aload_0
+         5: invokespecial #5                  // Method com/bu/firstdoc/FirstDocApplication$1."<init>":(Lcom/bu/firstdoc/FirstDocApplication;)V
+         8: areturn
+      LineNumberTable:
+        line 28: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       9     0  this   Lcom/bu/firstdoc/FirstDocApplication;
+    RuntimeVisibleAnnotations:
+      0: #30()
+
+  public javax.validation.Validator validator();
+    descriptor: ()Ljavax/validation/Validator;
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=1
+         0: ldc           #6                  // class org/hibernate/validator/HibernateValidator
+         2: invokestatic  #7                  // Method javax/validation/Validation.byProvider:(Ljava/lang/Class;)Ljavax/validation/bootstrap/ProviderSpecificBootstrap;
+         5: invokeinterface #8,  1            // InterfaceMethod javax/validation/bootstrap/ProviderSpecificBootstrap.configure:()Ljavax/validation/Configuration;
+        10: checkcast     #9                  // class org/hibernate/validator/HibernateValidatorConfiguration
+        13: iconst_0
+        14: invokeinterface #10,  2           // InterfaceMethod org/hibernate/validator/HibernateValidatorConfiguration.failFast:(Z)Lorg/hibernate/validator/HibernateValidatorConfiguration;
+        19: invokeinterface #11,  1           // InterfaceMethod org/hibernate/validator/HibernateValidatorConfiguration.buildValidatorFactory:()Ljavax/validation/ValidatorFactory;
+        24: astore_1
+        25: aload_1
+        26: invokeinterface #12,  1           // InterfaceMethod javax/validation/ValidatorFactory.getValidator:()Ljavax/validation/Validator;
+        31: areturn
+      LineNumberTable:
+        line 38: 0
+        line 39: 5
+        line 40: 14
+        line 41: 19
+        line 42: 25
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      32     0  this   Lcom/bu/firstdoc/FirstDocApplication;
+           25       7     1 validatorFactory   Ljavax/validation/ValidatorFactory;
+    RuntimeVisibleAnnotations:
+      0: #30()
+}
