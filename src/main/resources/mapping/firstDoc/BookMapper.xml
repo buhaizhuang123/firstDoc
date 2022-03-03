@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bu.firstdoc.firstDoc.mapper.BookMapper">
+    <insert id="insertBook">
+        insert into BOOK_INFO (B_NAME, B_CONTENT, B_CRE_DATE,FILE_PATH)
+        values (#{bName}, #{bContent}, #{bCreDate},#{filePath})
+    </insert>
+    <select id="listBooks" resultType="com.bu.firstdoc.product.model.BookDto">
+        select id id, B_NAME bName, B_CONTENT bContent, B_CRE_DATE bCreDate
+        from BOOK_INFO
+    </select>
+    <select id="findOneBook" resultType="com.bu.firstdoc.product.model.BookDto">
+        select id id, B_NAME bName, B_CONTENT bContent, B_CRE_DATE bCreDate
+        from BOOK_INFO where id = #{id}
+    </select>
+    <select id="findBooKByName" resultType="com.bu.firstdoc.product.model.BookDto">
+        select id id, B_NAME bName, B_CONTENT bContent, B_CRE_DATE bCreDate,FILE_PATH filePath
+        from BOOK_INFO where B_NAME = #{name}
+    </select>
+</mapper>

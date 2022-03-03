@@ -22,7 +22,7 @@ import javax.sql.DataSource;
  */
 
 @Configuration
-@MapperScan(basePackages = "com/bu/firstdoc/firstDoc/mapper",sqlSessionFactoryRef = "firstDocSqlSessionFactory")
+@MapperScan(basePackages = {"com/bu/firstdoc/firstDoc/mapper"},sqlSessionFactoryRef = "firstDocSqlSessionFactory")
 public class FirstDatasource {
 
 
@@ -38,7 +38,7 @@ public class FirstDatasource {
     SqlSessionFactory firstSqlSessionFactory(@Qualifier("firstDoc") DataSource dataSource) throws Exception {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSource);
-        sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResource("classpath:mapping/firstDoc/UserInfoMapper.xml"));
+        sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath*:/mapping/firstDoc/*.xml"));
         return sqlSessionFactoryBean.getObject();
     }
 

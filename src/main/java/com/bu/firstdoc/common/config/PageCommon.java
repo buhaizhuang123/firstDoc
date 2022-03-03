@@ -44,12 +44,12 @@ public class PageCommon implements Interceptor {
         String databaseProductName = mappedStatement.getConfiguration().getEnvironment().getDataSource().getConnection().getMetaData().getDatabaseProductName();
         System.out.println("databaseId" + databaseProductName);
 
-        if (databaseProductName.toLowerCase().equals("mysql")) {
+        if (databaseProductName.equalsIgnoreCase("mysql")) {
             // 拼接sql
             sql = mysql(sql, rb);
         }
 
-        if (databaseProductName.toLowerCase().equals("oracle")) {
+        if (databaseProductName.equalsIgnoreCase("oracle")) {
             // 拼接sql
             sql = oracle(sql, rb);
         }
@@ -81,8 +81,8 @@ public class PageCommon implements Interceptor {
 
         String format = String.format("LIMIT %d,%d", rowBounds.getOffset(), rowBounds.getLimit());
 
-        if (sql.contains(format)){
-            sql.replaceAll(format,"");
+        if (sql.contains(format)) {
+            sql.replaceAll(format, "");
         }
 
         sql += format;
