@@ -1,10 +1,7 @@
 package com.bu.firstdoc.jol.ts;
 
-import sun.misc.Unsafe;
 
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author haizhuangbu
