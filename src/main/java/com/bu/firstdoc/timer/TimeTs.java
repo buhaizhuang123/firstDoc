@@ -16,12 +16,6 @@ import java.util.concurrent.ScheduledExecutorService;
  */
 public class TimeTs {
 
-    @Test
-    public void runTimer() {
-        Timer timer = new Timer();
-        timer.schedule(new DemoTimerTask(), new Date(), 2000);
-
-    }
 
     class DemoTimerTask extends TimerTask {
         @Override
